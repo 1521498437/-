@@ -1,6 +1,6 @@
 /**
 * @file Animation.h
-* @brief 自定义属性动画类 
+* @brief 自定义属性动画类
 * @authors yandaoyang
 * @date 2020/12/30
 * @note
