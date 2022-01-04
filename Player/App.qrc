@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/App">
+        <file>Res/fontawesome-webfont.ttf</file>
+        <file>Res/qss/TitleBar.css</file>
+        <file>Res/qss/ControlBar.css</file>
+        <file>Res/icon/bubble.png</file>
+        <file>Res/icon/refresh.png</file>
+        <file>Res/qss/CentralWidget.css</file>
+        <file>Res/qss/PlayListWidget.css</file>
+        <file>Res/icon/cloud.png</file>
+        <file>Res/icon/BeautyFace/smooth.png</file>
+        <file>Res/icon/BeautyFace/thin.png</file>
+        <file>Res/icon/BeautyFace/white.png</file>
+        <file>Res/icon/BeautyFace/brightness.png</file>
+        <file>Res/icon/BeautyFace/contrast.png</file>
+        <file>Res/icon/BeautyFace/saturation.png</file>
+        <file>Res/icon/eye.png</file>
+        <file>Res/icon/eye_no.png</file>
+        <file>Res/icon/password.png</file>
+        <file>Res/icon/re_password.png</file>
+        <file>Res/icon/user.png</file>
+        <file>Res/Player.ico</file>
+    </qresource>
+</RCC>

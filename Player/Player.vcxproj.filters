@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Global">
+      <UniqueIdentifier>{7104d474-fe5c-498b-be27-9529107ac5f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Convert">
+      <UniqueIdentifier>{d81556d8-153f-492f-8b72-5855d0df03a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demux">
+      <UniqueIdentifier>{538b2210-c935-4f4b-8cc8-90876ccf359c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Decode">
+      <UniqueIdentifier>{9c234573-d86d-44b5-87c7-9aa93107d757}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Output">
+      <UniqueIdentifier>{8d2b318e-f1e4-4779-a87c-699bdd399bcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{4a8cadd2-c7e6-40c9-896a-2406f26d2601}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="App\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Output\Audio">
+      <UniqueIdentifier>{7812ffc0-3ae7-4cf9-9098-459eb4ecaffa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Output\Video">
+      <UniqueIdentifier>{75c4c315-3251-4bd2-a5ca-5985477fbe46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Output\Audio\Call">
+      <UniqueIdentifier>{853dd18c-54ef-405a-919f-61bd5fefab59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Output\Video\Call">
+      <UniqueIdentifier>{be58e3b0-8114-42b5-abdc-5e5f88734857}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Output\Audio\Thread">
+      <UniqueIdentifier>{bde1fa7c-4bdf-49dd-b47f-790f93aff338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Output\Video\Thread">
+      <UniqueIdentifier>{670473fe-b72c-43e8-992e-6ba265413182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Widget">
+      <UniqueIdentifier>{602d3411-29fc-4b9c-80f4-b89d16dc05b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="App\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="zDemoTest">
+      <UniqueIdentifier>{514687fb-ed2c-4469-9208-8e7634788cbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Streaming">
+      <UniqueIdentifier>{465b1c89-5eaa-4d7f-bdb9-a933aeab7251}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Streaming\XCJ">
+      <UniqueIdentifier>{bf3b9c1a-966b-4d67-a905-87e07fcafd3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Streaming\YDY">
+      <UniqueIdentifier>{1ee18841-ff30-4d23-be8c-4105edaab49a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter">
+      <UniqueIdentifier>{40cbfa3c-270c-4d9c-b1a6-be881dc16d3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Socket">
+      <UniqueIdentifier>{1f1d414a-c146-4530-8f61-2467d4f694b4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="App.qrc">
+      <Filter>App\Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>App\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Slider.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="MainPlayer.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="HWDecoder.cpp">
+      <Filter>Decode</Filter>
+    </ClCompile>
+    <ClCompile Include="Decoder.cpp">
+      <Filter>Decode</Filter>
+    </ClCompile>
+    <ClCompile Include="Demuxer.cpp">
+      <Filter>Demux</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleFmtConvert.cpp">
+      <Filter>Convert</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelFmtConvert.cpp">
+      <Filter>Convert</Filter>
+    </ClCompile>
+    <ClCompile Include="MediaController.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGLWnd.cpp">
+      <Filter>Output\Video\Call</Filter>
+    </ClCompile>
+    <ClCompile Include="QPainterWnd.cpp">
+      <Filter>Output\Video\Call</Filter>
+    </ClCompile>
+    <ClCompile Include="QAudioPlay.cpp">
+      <Filter>Output\Audio\Call</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioThread.cpp">
+      <Filter>Output\Audio\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoThread.cpp">
+      <Filter>Output\Video\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlBar.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleBar.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseWindow.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonWindow.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="IGradualVisible.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonDemo.cpp">
+      <Filter>zDemoTest</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp17Demo.cpp">
+      <Filter>zDemoTest</Filter>
+    </ClCompile>
+    <ClCompile Include="BubbleTip.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="CentralWidget.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayList.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="AppManager.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayListWidget.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>App\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StreamingWidget.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioRecorder.cpp">
+      <Filter>Streaming\YDY</Filter>
+    </ClCompile>
+    <ClCompile Include="Encoder.cpp">
+      <Filter>Streaming\YDY</Filter>
+    </ClCompile>
+    <ClCompile Include="RtmpStreaming.cpp">
+      <Filter>Streaming\YDY</Filter>
+    </ClCompile>
+    <ClCompile Include="MediaEncoder.cpp">
+      <Filter>Streaming\YDY</Filter>
+    </ClCompile>
+    <ClCompile Include="MatFilter.cpp">
+      <Filter>Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="MatFilterNet.cpp">
+      <Filter>Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="LiveSocket.cpp">
+      <Filter>Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="Service.cpp">
+      <Filter>Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginDialog.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistDialog.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEdit.cpp">
+      <Filter>App\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageWidget.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="MainPlayer.ui">
+      <Filter>App\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ControlBar.ui">
+      <Filter>App\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="TitleBar.ui">
+      <Filter>App\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="BaseWindow.ui">
+      <Filter>App\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="CentralWidget.ui">
+      <Filter>App\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="PlayListWidget.ui">
+      <Filter>App\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="StreamingWidget.ui">
+      <Filter>App\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="LoginDialog.ui">
+      <Filter>App\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="RegistDialog.ui">
+      <Filter>App\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="MessageWidget.ui">
+      <Filter>App\Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataBuf.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFmtConvert.h">
+      <Filter>Convert</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleFmtConvert.h">
+      <Filter>Convert</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelFmtConvert.h">
+      <Filter>Convert</Filter>
+    </ClInclude>
+    <ClInclude Include="Demuxer.h">
+      <Filter>Demux</Filter>
+    </ClInclude>
+    <ClInclude Include="Decoder.h">
+      <Filter>Decode</Filter>
+    </ClInclude>
+    <ClInclude Include="HWDecoder.h">
+      <Filter>Decode</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncBufferQueue.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="PubDef.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="IVideoCall.h">
+      <Filter>Output\Video\Call</Filter>
+    </ClInclude>
+    <ClInclude Include="IAudioCall.h">
+      <Filter>Output\Audio\Call</Filter>
+    </ClInclude>
+    <ClInclude Include="QAudioPlay.h">
+      <Filter>Output\Audio\Call</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="IGradualVisible.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="TestDef.h">
+      <Filter>zDemoTest</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h">
+      <Filter>App\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioRecorder.h">
+      <Filter>Streaming\YDY</Filter>
+    </ClInclude>
+    <ClInclude Include="Encoder.h">
+      <Filter>Streaming\YDY</Filter>
+    </ClInclude>
+    <ClInclude Include="RtmpStreaming.h">
+      <Filter>Streaming\YDY</Filter>
+    </ClInclude>
+    <ClInclude Include="MediaEncoder.h">
+      <Filter>Streaming\YDY</Filter>
+    </ClInclude>
+    <ClInclude Include="MatFilter.h">
+      <Filter>Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="MatFilterNet.h">
+      <Filter>Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="Service.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="MediaController.h">
+      <Filter>Global</Filter>
+    </QtMoc>
+    <QtMoc Include="MainPlayer.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="Slider.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="OpenGLWnd.h">
+      <Filter>Output\Video\Call</Filter>
+    </QtMoc>
+    <QtMoc Include="QPainterWnd.h">
+      <Filter>Output\Video\Call</Filter>
+    </QtMoc>
+    <QtMoc Include="AudioThread.h">
+      <Filter>Output\Audio\Thread</Filter>
+    </QtMoc>
+    <QtMoc Include="VideoThread.h">
+      <Filter>Output\Video\Thread</Filter>
+    </QtMoc>
+    <QtMoc Include="ControlBar.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="TitleBar.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="BaseWindow.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="CommonWindow.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="Animation.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="BubbleTip.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="Button.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="CentralWidget.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="PlayList.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="AppManager.h">
+      <Filter>Global</Filter>
+    </QtMoc>
+    <QtMoc Include="PlayListWidget.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="StreamingWidget.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="LiveSocket.h">
+      <Filter>Socket</Filter>
+    </QtMoc>
+    <QtMoc Include="LoginDialog.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="RegistDialog.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="TextEdit.h">
+      <Filter>App\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MessageWidget.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>
