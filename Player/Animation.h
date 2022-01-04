@@ -25,5 +25,5 @@ public:
 
 private:
 	bool _is_mutex { true };
-	bool _is_active{ false };
+	bool _is_active{ false }; // ²âÊÔGB2312±àÂë
 };
