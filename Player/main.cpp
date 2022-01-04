@@ -21,9 +21,10 @@ ENTRY
 {
    QApplication a(argc, argv);
 
-	//加载字库，用于作为UI图标
+	// 加载字库，用于作为UI图标
 	QFontDatabase::addApplicationFont(":/App/Res/fontawesome-webfont.ttf");
 
+	// 连接远程服务器
 	LiveSocket::Get().connectToServer("192.168.239.180", 6666);
 	
 	MainPlayer w1;
