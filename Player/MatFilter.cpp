@@ -2,7 +2,6 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #pragma comment(lib, "opencv_world3413.lib")
-#pragma comment(lib, "opencv_world3413d.lib")
 using namespace cv;
 
 struct SmoothFilter : public MatFilter {

@@ -48,11 +48,26 @@
     <LibraryPath>D:\App\OpenCV\opencv\build\x64\vc15\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutDir>..\bin\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>$(Qt_INCLUDEPATH_);%(AdditionalIncludeDirectories);..\inc\;.\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(Qt_LIBPATH_);%(AdditionalLibraryDirectories);..\lib\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(Qt_INCLUDEPATH_);%(AdditionalIncludeDirectories);..\inc\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(Qt_LIBPATH_);%(AdditionalLibraryDirectories);..\lib\</AdditionalLibraryDirectories>
@@ -108,13 +123,11 @@
     <ClCompile Include="CentralWidget.cpp" />
     <ClCompile Include="CommonWindow.cpp" />
     <ClCompile Include="ControlBar.cpp" />
-    <ClCompile Include="Cpp17Demo.cpp" />
     <ClCompile Include="Decoder.cpp" />
     <ClCompile Include="Demuxer.cpp" />
     <ClCompile Include="Encoder.cpp" />
     <ClCompile Include="HWDecoder.cpp" />
     <ClCompile Include="IGradualVisible.cpp" />
-    <ClCompile Include="JsonDemo.cpp" />
     <ClCompile Include="LiveSocket.cpp" />
     <ClCompile Include="LoginDialog.cpp" />
     <ClCompile Include="MatFilter.cpp" />
@@ -134,7 +147,6 @@
     <ClCompile Include="SampleFmtConvert.cpp" />
     <ClCompile Include="Slider.cpp" />
     <ClCompile Include="StreamingWidget.cpp" />
-    <ClCompile Include="Test.cpp" />
     <ClCompile Include="TextEdit.cpp" />
     <ClCompile Include="TitleBar.cpp" />
     <ClCompile Include="Util.cpp" />
@@ -175,8 +187,6 @@
     <QtMoc Include="MessageWidget.h" />
     <ClInclude Include="Service.h" />
     <ClInclude Include="RtmpStreaming.h" />
-    <ClInclude Include="Test.h" />
-    <ClInclude Include="TestDef.h" />
     <QtMoc Include="TextEdit.h" />
     <ClInclude Include="Util.h" />
     <QtMoc Include="TitleBar.h" />

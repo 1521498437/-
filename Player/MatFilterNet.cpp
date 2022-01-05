@@ -1,7 +1,7 @@
 #include "MatFilterNet.h"
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
-#pragma comment(lib, "opencv_world3413d.lib")
+#pragma comment(lib, "opencv_world3413.lib")
 
 MatFilterNet* MatFilterNet::Get(uint8_t index)
 {

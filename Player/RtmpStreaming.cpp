@@ -8,7 +8,6 @@ extern "C" {
 #pragma comment(lib, "swscale.lib")
 #pragma comment(lib, "avformat.lib")
 #pragma comment(lib, "opencv_world3413.lib")
-#pragma comment(lib, "opencv_world3413d.lib")
 #include <QDebug>
 #include "DataBuf.h"
 //#include "Encoder.h"

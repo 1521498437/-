@@ -56,9 +56,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="zDemoTest">
-      <UniqueIdentifier>{514687fb-ed2c-4469-9208-8e7634788cbb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Streaming">
       <UniqueIdentifier>{465b1c89-5eaa-4d7f-bdb9-a933aeab7251}</UniqueIdentifier>
     </Filter>
@@ -144,12 +141,6 @@
     <ClCompile Include="Animation.cpp">
       <Filter>Widget</Filter>
     </ClCompile>
-    <ClCompile Include="JsonDemo.cpp">
-      <Filter>zDemoTest</Filter>
-    </ClCompile>
-    <ClCompile Include="Cpp17Demo.cpp">
-      <Filter>zDemoTest</Filter>
-    </ClCompile>
     <ClCompile Include="BubbleTip.cpp">
       <Filter>Widget</Filter>
     </ClCompile>
@@ -167,9 +158,6 @@
     </ClCompile>
     <ClCompile Include="PlayListWidget.cpp">
       <Filter>Widget</Filter>
-    </ClCompile>
-    <ClCompile Include="Test.cpp">
-      <Filter>App\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StreamingWidget.cpp">
       <Filter>Widget</Filter>
@@ -204,10 +192,10 @@
     <ClCompile Include="RegistDialog.cpp">
       <Filter>Widget</Filter>
     </ClCompile>
-    <ClCompile Include="TextEdit.cpp">
-      <Filter>App\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MessageWidget.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEdit.cpp">
       <Filter>Widget</Filter>
     </ClCompile>
   </ItemGroup>
@@ -285,12 +273,6 @@
     </ClInclude>
     <ClInclude Include="IGradualVisible.h">
       <Filter>Widget</Filter>
-    </ClInclude>
-    <ClInclude Include="TestDef.h">
-      <Filter>zDemoTest</Filter>
-    </ClInclude>
-    <ClInclude Include="Test.h">
-      <Filter>App\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AudioRecorder.h">
       <Filter>Streaming\YDY</Filter>
@@ -381,10 +363,10 @@
     <QtMoc Include="RegistDialog.h">
       <Filter>Widget</Filter>
     </QtMoc>
-    <QtMoc Include="TextEdit.h">
-      <Filter>App\Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="MessageWidget.h">
+      <Filter>Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="TextEdit.h">
       <Filter>Widget</Filter>
     </QtMoc>
   </ItemGroup>

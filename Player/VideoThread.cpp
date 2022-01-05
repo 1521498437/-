@@ -13,7 +13,6 @@ extern "C"
 #pragma comment(lib, "swscale.lib")
 #pragma comment(lib, "avutil.lib")
 #pragma comment(lib, "opencv_world3413.lib")
-#pragma comment(lib, "opencv_world3413d.lib")
 #include "PixelFmtConvert.h"
 #include "MediaEncoder.h"
 #include "AudioThread.h" //////////////

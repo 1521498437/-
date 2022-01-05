@@ -2,7 +2,7 @@
 #include "MatFilterNet.h"
 #include <QDebug>
 #include <QMessageBox>
-#include <MediaController.h>
+#include "MediaController.h"
 #pragma execution_character_set("utf-8")
 #include "LoginDialog.h"
 #include "LiveSocket.h"
