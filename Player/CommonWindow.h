@@ -19,6 +19,8 @@ public:
 	virtual ~CommonWindow();
 
 public:
+	virtual void init() {}
+	void setVisible(bool) Q_DECL_OVERRIDE;
 	void show();
 	void hide();
 	void close();
@@ -27,6 +29,8 @@ public:
 	void setResizable(bool);
 	void setMinimizable(bool);
 	void setMaximizable(bool);
+	void setWindowFlags(Qt::WindowFlags);
+	Qt::WindowFlags windowFlags() const;
 	int shadowWidth() const;
 	TitleBar* titleBar() const;
 	const QRect& geometry() const;

@@ -17,6 +17,12 @@ CommonWindow::~CommonWindow()
 	/* delete _base; »á±ÀÀ£*/
 }
 
+void CommonWindow::setVisible(bool flag)
+{
+	_base->setVisible(flag);
+	QWidget::setVisible(flag);
+}
+
 void CommonWindow::show()
 {
 	_base->show();
@@ -56,6 +62,16 @@ void CommonWindow::setMinimizable(bool flag)
 void CommonWindow::setMaximizable(bool flag)
 {
 	_base->titleBar()->setMaximizable(flag);
+}
+
+void CommonWindow::setWindowFlags(Qt::WindowFlags flag)
+{
+	_base->setWindowFlags(_base->windowFlags() | flag);
+}
+
+Qt::WindowFlags CommonWindow::windowFlags() const
+{
+	return _base->windowFlags();
 }
 
 int CommonWindow::shadowWidth() const

@@ -171,7 +171,7 @@ void ControlBar::onStopPlay()
 void ControlBar::onPrevMedia()
 {
 	MediaController::OpenPara para = { "D:/Doc/视频文件/林俊杰-不为谁而作的歌(蓝光).mp4", MediaController::FILE, 1 };
-	auto w = (MainPlayer*)(APP_MGR->getWin("MainPlayer"));
+	auto w = (MainPlayer*)(AppManager::Get().getWin("MainPlayer"));
 	w->openMediaStream(para);
 }
 
@@ -181,14 +181,14 @@ void ControlBar::onNextMedia()
 	if (index == 0)
 	{
 		MediaController::OpenPara para = { "D:/Doc/视频文件/v1080.mp4", MediaController::FILE, 1 };
-		auto w = (MainPlayer*)(APP_MGR->getWin("MainPlayer"));
+		auto w = (MainPlayer*)(AppManager::Get().getWin("MainPlayer"));
 		w->openMediaStream(para);
 		index = 1;
 	}
 	else if (index == 1)
 	{
 		MediaController::OpenPara para = { "D:/Doc/视频文件/那些年.mp4", MediaController::FILE, 1 };
-		auto w = (MainPlayer*)(APP_MGR->getWin("MainPlayer"));
+		auto w = (MainPlayer*)(AppManager::Get().getWin("MainPlayer"));
 		w->openMediaStream(para);
 		index = 0;
 	}
@@ -210,9 +210,9 @@ void ControlBar::onShowSetting()
 
 void ControlBar::onShowPlayList()
 {
-	//auto attr = APP_MGR->getWinAttribute("MainPlayer", "geometry").toRect();
-	auto playList = APP_MGR->getWin("PlayListWidget");
-	auto player = APP_MGR->getWin("MainPlayer");
+	//auto attr = AppManager::Get().getWinAttribute("MainPlayer", "geometry").toRect();
+	auto playList = AppManager::Get().getWin("PlayListWidget");
+	auto player = AppManager::Get().getWin("MainPlayer");
 	if (!playList || !player) return;
 
 	if (playList->isVisible())

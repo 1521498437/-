@@ -1,75 +1,93 @@
 #include "AppManager.h"
 
-AppManager* AppManager::GetInstance()
+AppManager& AppManager::Get()
 {
 	static AppManager instance;
-	return &instance;
+	return instance;
 }
 
 AppManager::AppManager()
-	: QObject(nullptr)
+	//: QObject(nullptr)
 {
 }
 
 AppManager::~AppManager()
 {
+	for (auto& win : mWindowMap)
+		SAFE_DELETE(win);
+	mWindowMap.clear();
+	mCreatorList.clear();
 }
 
 void AppManager::closeApp()
 {
-	for (const auto& w: _wins)
+	for (const auto& w: mWindowMap)
 		w->close();
 }
 
-void AppManager::registerWin(CommonWindow* cw)
+void AppManager::registerWinCreator(WinCreator creator)
+{
+	mCreatorList.append(creator);
+}
+
+void AppManager::createWindows() 
+{
+	for (const auto creator : mCreatorList) {
+		auto win = std::invoke(creator);
+		mWindowMap.insert(win->metaObject()->className(), win);
+		win->init();
+	}
+}
+
+/*void AppManager::registerWin(CommonWindow* cw)
 {
 	//这里用到了Qt的元对象反射.
-	_wins.insert(cw->metaObject()->className(), cw);
+	mWindowMap.insert(cw->metaObject()->className(), cw);
 }
 
 void AppManager::removeWin(const QString& name)
 {
-	_wins.remove(name);
-}
+	mWindowMap.remove(name);
+}*/
 
 void AppManager::showWin(const QString& name)
 {
-	if (_wins.find(name) != _wins.end())
+	if (mWindowMap.find(name) != mWindowMap.end())
 	{
-		_wins[name]->show();
+		mWindowMap[name]->show();
 	}
 }
 
 void AppManager::hideWin(const QString& name)
 {
-	if (_wins.find(name) != _wins.end())
+	if (mWindowMap.find(name) != mWindowMap.end())
 	{
-		_wins[name]->hide();
+		mWindowMap[name]->hide();
 	}
 }
 
 CommonWindow* AppManager::getWin(const QString& name)
 {
-	if (_wins.find(name) != _wins.end())
+	if (mWindowMap.find(name) != mWindowMap.end())
 	{
-		return _wins[name];
+		return mWindowMap[name];
 	}
 	return nullptr;
 }
 
 void AppManager::sendNotify(const QString& sender, const QString& receiver, const QVariant& data)
 {
-	if (_wins.find(receiver) != _wins.end())
+	if (mWindowMap.find(receiver) != mWindowMap.end())
 	{
-		_wins[receiver]->handleNotify(sender, data);
+		mWindowMap[receiver]->handleNotify(sender, data);
 	}
 }
 
 /*QVariant AppManager::getWinProperty(const QString& name, const QString& property)
 {
-	if (_wins.find(name) != _wins.end())
+	if (mWindowMap.find(name) != mWindowMap.end())
 	{
-		return _wins[name]->property(property.toStdString().c_str());
+		return mWindowMap[name]->property(property.toStdString().c_str());
 	}
 	return QVariant();
 }
@@ -77,11 +95,11 @@ void AppManager::sendNotify(const QString& sender, const QString& receiver, cons
 QVariant AppManager::getWinAttribute(const QString& name, const QString& attrname)
 {
 	//调用的函数必须被标明为Q_INVOKABLE
-	if (_wins.find(name) != _wins.end())
+	if (mWindowMap.find(name) != mWindowMap.end())
 	{
 		QVariant var;
 		return QMetaObject::invokeMethod(
-			_wins[name],
+			mWindowMap[name],
 			attrname.toStdString().c_str(),
 			//"property",
 			Qt::DirectConnection,

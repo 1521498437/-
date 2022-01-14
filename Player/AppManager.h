@@ -7,22 +7,32 @@
 */
 
 #pragma once
-#include <Map>
-#include <QObject>
+#include <QMap>
+//#include <QObject>
+#include "Macro.h"
 #include "CommonWindow.h"
-#define APP_MGR AppManager::GetInstance()
 
-class AppManager : public QObject
+class AppManager final// : public QObject
 {
-	Q_OBJECT
+	//Q_OBJECT
 
 public:
-	static AppManager* GetInstance(); /* 单例接口 */
+	static AppManager& Get();
 
-public: 
+	template<typename T>
+	struct WinRegister {
+		explicit WinRegister() {
+			AppManager::Get().registerWinCreator([]()->CommonWindow* { return new T; });
+		}
+	};
+
+public:
+	using WinCreator = CommonWindow*(*)();
+	void registerWinCreator(WinCreator);
+	void createWindows();
 	void closeApp();
-	void registerWin(CommonWindow*);
-	void removeWin(const QString& name);
+	// void registerWin(CommonWindow*);
+	// void removeWin(const QString& name);
 	void showWin(const QString& name);
 	void hideWin(const QString& name);
 	CommonWindow* getWin(const QString& name);
@@ -33,12 +43,14 @@ public:
 private:
 	AppManager();
 	~AppManager();
-	AppManager(AppManager&&) = delete;
-	AppManager(const AppManager&) = delete;
-	AppManager& operator=(AppManager&&) = delete;
-	AppManager& operator=(const AppManager&) = delete;
+	DISABLE_COPY_ASSIGN(AppManager)
+	DISABLE_MOVE_ASSIGN(AppManager)
 
 private:
 	//如果传递进来的是在堆区创建的窗体，需要调用者自己管理窗体的生命周期
-	QMap<QString, CommonWindow*> _wins;//不允许管理前向声明的对象
+	QMap<QString, CommonWindow*> mWindowMap;//不允许管理前向声明的对象
+	QList<WinCreator> mCreatorList;
 };
+
+#define AUTO_REGISTER_WINDOW(class) \
+	static AppManager::WinRegister<class> __g_##class##_register__;

@@ -9,7 +9,7 @@ class MessageWidget : public CommonWindow
 public:
 	MessageWidget(QWidget* parent = Q_NULLPTR);
 	~MessageWidget();
-	bool init();
+	void init();
 
 protected:
 	void handleNotify(const QString&, const QVariant&) override;

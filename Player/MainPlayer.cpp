@@ -6,6 +6,8 @@
 #include <QKeyEvent>
 #include <QAction>
 #include <QDebug>
+#include <QtWidgets/QApplication>
+#include <QDesktopWidget>
 //#include <future>
 #include "QPainterWnd.h"
 //#include <ctime>
@@ -15,13 +17,17 @@
 
 //static int current_msec = 0;
 //static int last_moved_moment = 0;
+//static AppManager::WinRegister<MainPlayer> g_register_win_1;
+
+AUTO_REGISTER_WINDOW(MainPlayer);
 
 MainPlayer::MainPlayer(QWidget* parent)
     : CommonWindow(parent),
     _device_menu(/*new QMenu(this)*/_base->titleBar()->getDeviceMenu()),
     _videoWnd(new QPainterWnd(_base))
 {
-      ui.setupUi(this);
+   ui.setupUi(this);
+
     /*_auto_hide_timer->setSingleShot(true);
     //_auto_hide_timer->start(3000);
     connect(_auto_hide_timer, &QTimer::timeout, [this] { 
@@ -167,7 +173,7 @@ void MainPlayer::onRtmpStreaming()
       QMessageBox::warning(this, "", "请先打开摄像头");
       return;
    }
-   APP_MGR->showWin("StreamingWidget");
+   AppManager::Get().showWin("StreamingWidget");
 }
 
 //void MainPlayer::onRtmpError()
@@ -205,7 +211,7 @@ void MainPlayer::closeEvent(QCloseEvent*)
 {
     //_app_exit = true;
     //MEDIA_CTL->stop();
-    APP_MGR->closeApp();
+    AppManager::Get().closeApp();
 }
 
 void MainPlayer::resizeEvent(QResizeEvent*)

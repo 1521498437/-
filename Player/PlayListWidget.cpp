@@ -9,10 +9,13 @@
 #include "Service.h"
 #pragma execution_character_set("utf-8")
 
+AUTO_REGISTER_WINDOW(PlayListWidget);
+
 PlayListWidget::PlayListWidget(QWidget* parent)
 	: CommonWindow(parent)
 {
 	ui.setupUi(this);
+	setWindowFlags(windowFlags() | Qt::SubWindow); // 设置为子窗口(任务栏不显示图标)
 	setResizable(false);
 	//setMinimizable(false);
 	setMaximizable(false);
@@ -22,7 +25,7 @@ PlayListWidget::~PlayListWidget()
 {
 }
 
-bool PlayListWidget::init()
+void PlayListWidget::init()
 {
 	setStyleSheet(Util::loadQssFile(":/App/Res/qss/PlayListWidget.css"));
 	_base->titleBar()->setMainMenuVisible(false);
@@ -46,13 +49,13 @@ bool PlayListWidget::init()
 	connect(ui.btnFileList, &QPushButton::clicked, [this] {ui.stackedWidget->setCurrentWidget(ui.fileListPage); });
 	//connect(ui.liveList, &QListWidget::itemDoubleClicked, [this](QListWidgetItem* it) {emit sigOpenLive(it->data(0).toString(); });
 	connect(ui.tvList, &QListWidget::itemDoubleClicked, [this](QListWidgetItem* it) {
-		APP_MGR->sendNotify(metaObject()->className(), "MainPlayer", _urls.value(it->text())); });
+		AppManager::Get().sendNotify(metaObject()->className(), "MainPlayer", _urls.value(it->text())); });
 	//connect(ui.edtSelect, &QLineEdit::textEdited, this, &PlayListWidget::onSelect);
 
 	connect(ui.liveList, &QListWidget::itemDoubleClicked, [this](QListWidgetItem* it) {
 		LiveSocket::Get().watchLiveReq("yandaoyang", LoginDialog::UserName());
-		APP_MGR->sendNotify(metaObject()->className(), "MainPlayer", _liveRooms.value(it->text()));
-		APP_MGR->sendNotify(metaObject()->className(), "MessageWidget", QVariant());
+		AppManager::Get().sendNotify(metaObject()->className(), "MainPlayer", _liveRooms.value(it->text()));
+		AppManager::Get().sendNotify(metaObject()->className(), "MessageWidget", QVariant());
 	});
 
 	connect(ui.btnLiveList, &QPushButton::clicked, [this] {
@@ -98,10 +101,6 @@ bool PlayListWidget::init()
 			ui.tvList->takeItem(tmp.at(i));
 		}
 	});
-
-
-
-	return true;
 }
 
 void PlayListWidget::onSelect(const QString& str)

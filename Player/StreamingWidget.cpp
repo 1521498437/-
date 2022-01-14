@@ -9,6 +9,8 @@
 #include "Service.h"
 #include "AppManager.h"
 
+AUTO_REGISTER_WINDOW(StreamingWidget);
+
 StreamingWidget::StreamingWidget(QWidget *parent)
 	: CommonWindow(parent)
 {
@@ -69,7 +71,7 @@ void StreamingWidget::init()
 		if (res->success)
 		{
 			MEDIA_CTL->startStreaming(ui.edtRtmp->text());
-			APP_MGR->sendNotify(metaObject()->className(), "MessageWidget", LoginDialog::UserName());
+			AppManager::Get().sendNotify(metaObject()->className(), "MessageWidget", LoginDialog::UserName());
 			ui.btnCtrl->setText("开始直播");
 			//LiveSocket::Get().watchLiveReq("yandaoyang", "佚名");
 		}

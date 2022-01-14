@@ -6,6 +6,8 @@
 #include "AppManager.h"
 #pragma execution_character_set("utf-8")
 
+AUTO_REGISTER_WINDOW(MessageWidget);
+
 MessageWidget::MessageWidget(QWidget* parent)
 	: CommonWindow(parent)
 {
@@ -34,7 +36,7 @@ void MessageWidget::handleNotify(const QString& sender, const QVariant& data)
 		_onlineCount += 1;
 		ui.btnOnline->setText(QString("ÔÚÏß %1").arg(_onlineCount));
 
-		auto player = APP_MGR->getWin("MainPlayer");
+		auto player = AppManager::Get().getWin("MainPlayer");
 		if (!player) return;
 		QRect r = player->geometry();
 		this->show();
@@ -42,7 +44,7 @@ void MessageWidget::handleNotify(const QString& sender, const QVariant& data)
 	}
 	else if (sender.compare("PlayListWidget") == 0)
 	{
-		auto player = APP_MGR->getWin("MainPlayer");
+		auto player = AppManager::Get().getWin("MainPlayer");
 		if (!player) return;
 		QRect r = player->geometry();
 		this->show();
@@ -50,7 +52,7 @@ void MessageWidget::handleNotify(const QString& sender, const QVariant& data)
 	}
 }
 
-bool MessageWidget::init()
+void MessageWidget::init()
 {
 	connect(ui.btnMsg, &QPushButton::clicked, [this] {ui.stackedWidget->setCurrentWidget(ui.msgPage); });
 	connect(ui.btnOnline, &QPushButton::clicked, [this] {ui.stackedWidget->setCurrentWidget(ui.onlinePage); });
@@ -88,7 +90,6 @@ bool MessageWidget::init()
 		otherSpeak(msg->user, msg->msg);
 	});
 
-	return true;
 }
 
 void MessageWidget::selfSpeak(const QString& str)

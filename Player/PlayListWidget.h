@@ -18,7 +18,7 @@ class PlayListWidget : public CommonWindow
 public:
 	PlayListWidget(QWidget* parent = Q_NULLPTR);
 	~PlayListWidget();
-	bool init();
+	void init();
 
 private slots:
 	void onSelect(const QString&);
