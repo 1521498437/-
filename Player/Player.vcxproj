@@ -151,6 +151,7 @@
     <ClCompile Include="TitleBar.cpp" />
     <ClCompile Include="Util.cpp" />
     <ClCompile Include="VideoThread.cpp" />
+    <ClCompile Include="WinUtil.cpp" />
     <QtRcc Include="App.qrc" />
     <QtUic Include="BaseWindow.ui" />
     <QtUic Include="CentralWidget.ui" />
@@ -167,11 +168,12 @@
     <QtUic Include="TitleBar.ui" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="WinUtil.h" />
     <QtMoc Include="Animation.h" />
     <QtMoc Include="BubbleTip.h" />
     <QtMoc Include="Button.h" />
     <QtMoc Include="CentralWidget.h" />
-    <QtMoc Include="AppManager.h" />
+    <ClInclude Include="AppManager.h" />
     <ClInclude Include="AudioRecorder.h" />
     <ClInclude Include="Encoder.h" />
     <ClInclude Include="IGradualVisible.h" />
@@ -194,7 +196,7 @@
     <QtMoc Include="BaseWindow.h" />
     <QtMoc Include="CommonWindow.h" />
     <ClInclude Include="HWDecoder.h" />
-    <ClInclude Include="PubDef.h" />
+    <ClInclude Include="Macro.h" />
     <QtMoc Include="VideoThread.h" />
     <QtMoc Include="MediaController.h" />
     <QtMoc Include="AudioThread.h" />
